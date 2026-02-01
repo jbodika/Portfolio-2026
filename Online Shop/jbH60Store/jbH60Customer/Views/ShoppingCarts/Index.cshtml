@@ -1,0 +1,88 @@
+﻿@model jbH60Customer.Models.ShoppingCart
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    @if (Model != null)
+    {
+        <fieldset id="shoppingCart">
+
+            <h1>My Cart</h1>
+            <p>@ViewBag.CartTotal Items in Cart</p>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>PRODUCT NAME</th>
+                        <th>QUANTITY</th>
+                        <th>PRICE</th>
+
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in ViewBag.CartItems)
+                    {
+                        <tr>
+                            <td>
+                                @if (item.Product != null)
+                                {
+                                    <p class="fw-bold">@item.Product.Description</p>
+                                    @if (item.Product.Image != null)
+                                    {
+                                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.Product.Image)" alt="Image of @item.Product.Description" />
+                                    }
+                                }
+                            </td>
+
+                            <td class="cart-td">
+                                <form asp-action="UpdateCart" asp-controller="ShoppingCarts">
+                                    <input hidden name="cartId" value="@item.CartId" />
+                                    <input hidden name="price" value="@item.Price" />
+                                    <input hidden name="productId" value="@item.ProductId" />
+                                    <input hidden name="cartItemId" value="@item.CartItemId" />
+
+                                    <button type="submit" class="quantity-btn negative">-</button>
+                                    <input type="text" class="quantity" name="quantity" readonly="readonly" value="@item.Quantity" />
+                                    <button type="submit" class="quantity-btn positive">+</button>
+                                </form>
+                            </td>
+                            <td class="cart-td">@item.Price$</td>
+                            <td class="cart-td">
+                                <a asp-action="RemoveFromCart" asp-route-id="@item.CartItemId" asp-controller="ShoppingCarts">
+                                    <img src="/images/bin.png" />
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+            <hr>
+            <p>Cart Subtotal:  @ViewBag.TotalCost$</p>
+            @*     <p>Taxes : @ViewBag.Taxes</p> *@
+            <form asp-action="ProcessPayment" asp-controller="ShoppingCarts">
+                <button class="payment-button" type="submit">Proceed to Payment</button>
+            </form>
+            @*    <p>Final amout: @ViewBag.FinalAmount</p> *@
+        </fieldset>
+    }
+    else
+    {
+
+        <p>Seems like you have no items in your cart</p>
+
+    }
+
+</div>
+
+<partial name="_RemoveProductNotificationPartial" />
+<partial name="_UpdateProductNotificationPartial" />
+<partial name="_ProductErrorNotificationPartial" />

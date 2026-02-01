@@ -1,0 +1,6 @@
+﻿<form asp-action="Search" method="get" class="search-form">
+    <div class="input-group">
+        <input type="search" name="productName" class="form-control search-input" placeholder="Search by product name" aria-label="Search" aria-describedby="search-button" value=@TempData["SearchVal"] />
+        <button type="submit" class="btn btn-primary" id="search-button">Search</button>
+    </div>
+</form>

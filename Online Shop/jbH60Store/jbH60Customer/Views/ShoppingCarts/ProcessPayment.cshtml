@@ -1,0 +1,53 @@
+﻿<main class="container">
+    <div id="shoppingCart">
+        <h3>Order information</h3>
+        <table class="table">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Province</th>
+            </tr>
+            <tr>
+                <td>@ViewBag.Customer.FirstName</td>
+                <td>@ViewBag.Customer.LastName</td>
+                <td>@ViewBag.Customer.Email</td>
+                <td>@ViewBag.Customer.PhoneNumber</td>
+                <td>@ViewBag.Customer.Province</td>
+            </tr>
+        </table>
+
+        <p class="text-danger">@ViewBag.InvalidProvince</p>
+        <p>Cart Items Count: @ViewBag.CartItems.Count</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.CartItems)
+                {
+                    <tr>
+                        <td>@item.Product.Description</td>
+                        <td class="fw-bold">x @item.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <p>Tax amount: @ViewBag.Taxes$</p>
+        <p>Total: @ViewBag.FinalAmount$</p>
+
+        <form asp-action="MakePayment" asp-controller="Orders">
+            <label for="creditcard">Credit Card:</label>
+            <input class="mb-3" type="text" id="creditcard" name="creditcard" value="@(ViewBag.Customer.CreditCard!= null?ViewBag.Customer.CreditCard:"")" />
+            <button class="payment-button">Buy now</button>
+        </form>
+    </div>
+    <div>
+    </div>
+</main>

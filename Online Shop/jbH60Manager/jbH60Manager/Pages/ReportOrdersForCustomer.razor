@@ -1,0 +1,52 @@
+﻿<h3>OrdersByCustomer</h3>
+@page "/all-customers"
+@using jbH60Manager.Models
+@inject HttpClient httpClient
+
+@if (orders == null)
+{
+    <p>Loading products...</p>
+}
+else if (orders.Count == 0)
+{
+    <p>No customers found</p>
+}
+else
+{
+    @foreach (var item in orders)
+    {
+        @if (item != null)
+        {
+            <Customer CustomerId="@item.CustomerId" FirstName="@GetCustomerName(item.CustomerId).Result" />
+        }
+    }
+}
+
+@code {
+    private List<Order> orders;
+    private List<Customer> customers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            orders = await httpClient.GetFromJsonAsync<List<Order>>("http://localhost:5076/api/Orders");
+            customers = await httpClient.GetFromJsonAsync<List<Customer>>("http://localhost:5076/api/Customers");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching products: {ex.Message}");
+        }
+    }
+
+    private async Task<string> GetCustomerName(int id)
+    {
+        var customer = await GetCustomer(id);
+        return customer != null ? customer.FirstName : "Customer not found";
+    }
+
+    private async Task<Customer> GetCustomer(int id)
+    {
+        return await httpClient.GetFromJsonAsync<Customer>($"http://localhost:5076/api/Customers/{id}");
+    }
+}

@@ -1,0 +1,91 @@
+﻿@page "/product/edit/updateprices/{id}"
+@using System.Text.Json
+@using System.Text;
+@using jbH60Manager.Models;
+@inject HttpClient httpClient;
+@inject NavigationManager navigate
+
+@if (product == null)
+{
+    <p>Loading product....</p>
+}
+else
+{
+    <div>
+        <a class="btn-pink p-2" href="/product/@product.ProductId">Back to Product</a>
+    </div>
+    <div class="row edit-form-container">
+        <h1>Edit</h1>
+        <h4>Product</h4>
+        <hr />
+        <div class="col-md-8">
+            <div>
+                <h5>@product.Description - @product.Manufacturer</h5>
+            </div>
+            <div class="form-group">
+                <form @onsubmit="SubmitForm">
+                    <div asp-validation-summary="productOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ProductId" />
+
+                    <label for="NewBuyPrice" class="control-label form-label">New buy price:</label>
+                    <input type="number" id="NewBuyPrice" name="NewBuyPrice" class="form-control" @bind="@product.BuyPrice" min="1" />
+                    <span asp-validation-for="BuyPrice" class="text-danger"></span>
+
+                    <label for="NewSellPrice" class="control-label form-label">New sell price:</label>
+                    <input type="number" id="NewSellPrice" name="NewSellPrice" class="form-control" @bind="@product.SellPrice" min="1" />
+                    <span asp-validation-for="SellPrice" class="text-danger"></span>
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    private Product product { get; set; }
+    private string error { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        product = await LoadProductDetails(Id);
+    }
+
+    private async Task<Product> LoadProductDetails(string id)
+    {
+        return await httpClient.GetFromJsonAsync<Product>($"http://localhost:5076/api/Products/{id}");
+    }
+
+    private async Task SubmitForm()
+    {
+        if (product.SellPrice <= product.BuyPrice)
+        {
+            error = "Sell price must be higher than buy price.";
+            return;
+        }
+
+        var updateData = new
+        {
+            BuyPrice = product.BuyPrice,
+            SellPrice = product.SellPrice
+        };
+
+        var jsonContent = new StringContent(JsonSerializer.Serialize(updateData), Encoding.UTF8, "application/json");
+
+        var response = await httpClient.PatchAsync($"http://localhost:5076/api/Products/UpdatePrices/{Id}", jsonContent);
+
+        if (response.IsSuccessStatusCode)
+        {
+            navigate.NavigateTo($"/product/{product.ProductId}");
+        }
+        else
+        {
+            error = "Invalid values in the form";
+        }
+    }
+}

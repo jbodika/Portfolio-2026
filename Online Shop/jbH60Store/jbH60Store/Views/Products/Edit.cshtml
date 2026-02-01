@@ -1,0 +1,103 @@
+﻿@model jbH60Store.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <a class="btn-pink p-2" asp-action="AllProductInformation" asp-controller="Products">Back to List</a>
+</div>
+<div class="edit-form-container">
+    <h1>Edit</h1>
+    <h4>Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="ProductId" value="@Model.ProductId"/>
+                <input type="hidden" asp-for="CartItems" />
+                <input type="hidden" asp-for="OrderItems" />
+
+                <div class="form-group">
+                    <label asp-for="ProdCat" class="control-label form-label"></label>
+                    <select asp-for="ProdCatId" class="form-control" asp-items="ViewBag.ProdCatId"></select>
+                    <span asp-validation-for="ProdCatId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label form-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Manufacturer" class="control-label form-label"></label>
+                    <input asp-for="Manufacturer" class="form-control" />
+                    <span asp-validation-for="Manufacturer" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <hr />
+                    <h5>
+                        Update Stock<a asp-action="UpdateStock" asp-controller="Products" asp-route-id="@Model.ProductId">
+                            <img class="float-end" src="~/images/edit.png" />
+                        </a>
+                  
+                    </h5>
+
+                    <label asp-for="Stock" class="control-label form-label"></label>  
+                    <input asp-for="Stock" class="form-control" value="@Model.Stock" readonly />
+
+                  
+                    <span asp-validation-for="Stock" class="text-danger"></span>
+                </div>
+      
+
+                <div class="form-group">
+                    <hr />
+                    <h5>
+                        Update Prices<a asp-action="UpdatePrices" asp-controller="Products" asp-route-id="@Model.ProductId">
+                            <img class="float-end" src="~/images/edit.png" />
+                        </a>
+                    </h5>
+                    <label asp-for="BuyPrice" class="control-label form-label"></label>
+                    <input asp-for="BuyPrice" class="form-control"  value="@Model.BuyPrice" readonly/>
+                   
+                    <span asp-validation-for="BuyPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SellPrice" class="control-label form-label"></label>
+                    <input asp-for="SellPrice" class="form-control"  value="@Model.SellPrice" readonly />
+                    <span asp-validation-for="SellPrice" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <label asp-for="EmployeeNotes" class="control-label form-label"></label>
+                    <textarea asp-for="EmployeeNotes" rows="5" class="form-control"></textarea>
+                </div>
+                @if(Model.Image != null)
+                {
+                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Image)" width="100" height="100" alt="Image of @Model.Description" />
+                }
+                <div class="form-group p-2">
+                    <a asp-action="RemoveImage" asp-route-id="@Model.ProductId"> <img src="~/images/remove.png" /></a>
+                   
+                    <input class="visually-hidden" type="file" asp-for="Image" id="files" name="imageFile" value="@(Model.Image == null ? "" : Convert.ToBase64String(Model.Image))" />
+                        <label for="files">Upload a new image </label>
+                        </div>
+                
+                
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary mt-2" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

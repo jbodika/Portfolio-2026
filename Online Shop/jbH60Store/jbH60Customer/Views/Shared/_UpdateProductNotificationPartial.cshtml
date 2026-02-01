@@ -1,0 +1,19 @@
+﻿@if (TempData["UpdatedProduct"] != null && (bool)TempData["UpdatedProduct"])
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+    <script>
+
+        toastr.options = {
+            "positionClass": 'toast-top-right-update'
+        };
+
+        console.log(toastr.options);
+
+        toastr.success('The quantity for the @TempData["ProductName"] was modified to @TempData["ProductAmount"] in your cart', 'Bzzz 🐝');
+
+
+    </script>
+}

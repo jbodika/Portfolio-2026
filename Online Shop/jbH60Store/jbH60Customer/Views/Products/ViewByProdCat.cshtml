@@ -1,0 +1,16 @@
+﻿@model IEnumerable<jbH60Customer.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <h2 class="pb-4 fw-bold">Products (@ViewData["ProdCount"])</h2>
+    <a asp-action="Index" asp-controller="ProductCategories"> Return to all product categories</a>
+    <partial name="_SearchBarPartial" />
+    <partial name="_AllProductsPartial" />
+
+</div>
+ 

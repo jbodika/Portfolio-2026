@@ -1,0 +1,19 @@
+﻿@if (TempData["ProductError"] != null && (bool)TempData["ProductError"])
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+    <script>
+
+        toastr.options = {
+            "positionClass": 'toast-top-right-error'
+        };
+
+        console.log(toastr.options);
+
+        toastr.error('Product cannot be added to cart due to an insufficient amount of stock', 'Bzzz 🐝');
+
+
+    </script>
+}

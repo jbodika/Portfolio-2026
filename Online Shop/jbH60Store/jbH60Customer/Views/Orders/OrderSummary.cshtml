@@ -1,0 +1,33 @@
+﻿@model jbH60Customer.Models.Order
+
+@{
+    ViewData["Title"] = "OrderSummary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main class="container">
+    <h1>OrderSummary</h1>
+
+    <div id="shoppingCart">
+        <h4>Order Placed at @Html.DisplayFor(model => model.DateCreated)</h4>
+        <hr />
+        <table class="table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Customer)</th>
+                <td>@Html.DisplayFor(model => model.Customer.FirstName) @Html.DisplayFor(model => model.Customer.LastName)  - @Html.DisplayFor(model => model.Customer.Province)<br />@Html.DisplayFor(model => model.Customer.Email)<br /> @Html.DisplayFor(model => model.Customer.PhoneNumber)</td>
+            </tr>
+            <tr>
+                <th>SubTotal</th>
+                <td>@Html.DisplayFor(model => model.Total)$</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Taxes)</th>
+                <td>@Html.DisplayFor(model => model.Taxes)$</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Total)</th>
+                <td>@(Model.Total+ Model.Taxes)$</td>
+            </tr>
+        </table>
+    </div>
+</main>
+

@@ -1,0 +1,55 @@
+﻿<head>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+</head>
+<div class="top-row ps-5 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">jbH60Manager</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="all-products">
+                <span class="oi" aria-hidden="true"></span>All Products
+            </NavLink>
+        </div>
+
+       
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="all-product-categories">
+                <span class="oi" aria-hidden="true"></span>Product Categories
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" >
+                <span class="oi" aria-hidden="true"></span>
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="orders">
+                <span class="oi" aria-hidden="true"></span>Completed Order Reports
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

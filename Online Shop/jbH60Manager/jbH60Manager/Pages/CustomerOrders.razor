@@ -1,0 +1,73 @@
+﻿@page "/customer/{customerId}/orders"
+@inject HttpClient httpClient
+@using jbH60Manager.Models;
+
+@if (customer == null)
+{
+    <p>Loading customer...</p>
+}
+else
+{
+    <h3>@customer.FirstName @customer.LastName's orders</h3>
+}
+
+@if (orders == null)
+{
+    <p>Loading orders...</p>
+}
+else if (orders.Count == 0)
+{
+    <p>No orders found for this customer</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order Date</th>
+                <th>Total</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in orders)
+            {
+                <tr>
+                    <td>@order.DateFufilled.ToShortDateString()</td>
+                    <td>@order.Total$</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public string CustomerId { get; set; }
+
+    private List<Order> orders;
+    private Customer customer;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        try
+        {
+         
+            customer = await httpClient.GetFromJsonAsync<Customer>($"http://localhost:5076/api/Customers/{CustomerId}");
+           
+
+        
+            orders = await httpClient.GetFromJsonAsync<List<Order>>($"http://localhost:5076/api/Orders/CustomerOrders/{CustomerId}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading data: {ex.Message}");
+        }
+    }
+}

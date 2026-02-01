@@ -1,0 +1,187 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #e0e0e0;
+    /**border: 5px solid white;*/
+    font-family:'raleway';
+    color: black !important;
+}
+a{
+    color:aliceblue;
+}
+
+fieldset {
+    /*border-radius: 50px;*/
+    background-image: url('../images/green_bg.jpg');
+    border: 3px solid white;
+    text-align: center;
+    margin: 0 auto; /* Set margin to auto for horizontal centering */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+h1 {
+    font-family: 'lobster';
+}
+
+.HH_labels {
+    color: darkolivegreen; /* Yellow */
+    font-family: 'raleway';
+    font-size: 25px;
+}
+
+#HH_first_word {
+    color: darkolivegreen;
+    position: relative;
+    font-size: 65px;
+    z-index: 2;
+}
+
+#HH_second_word {
+    color: #9fc360;
+    position: relative;
+    font-size: 60px;
+    top: 35px;
+    left: -80px;
+}
+
+section {
+    height: 100%;
+}
+
+.btn-pink {
+    background-color:#9fc360;
+    border-radius: 100px;
+    border: none;
+}
+
+.card-body {
+    background-color: white;
+}
+
+.bg-low-stock {
+    background-color: cornsilk; /* Light red background */
+   
+}
+
+nav {
+    margin: 30px;
+}
+
+.search-form {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.input-group {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-input {
+    border-radius: 5px;
+}
+
+
+#search-button {
+    border-top-left-radius: 0;
+    background-color: black;
+    border: 3px solid black;
+    border-bottom-left-radius: 0;
+}
+
+.btn-edit {
+   
+    background-color: lightgray;
+    border:1px solid black
+}
+
+
+.btn-edit:hover {
+    background-color: black;
+    color:white;
+    border: 1px solid black;
+   /* transform:*/
+}
+
+
+a {
+    text-decoration: none;
+  
+}
+
+    a:hover {
+        color: black;
+    }
+
+.edit-form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-label {
+    color: black;
+    font-weight: bold;
+}
+
+.form-control {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+    .form-control:focus {
+        border-color: #9fc360;
+        box-shadow: 0 0 5px rgba(159, 195, 96, 0.7);
+    }
+
+.btn-primary {
+    background-color: black;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: black;
+        color: #9fc360;
+        border: 2px solid #9fc360;
+
+    }
+
+.delete-page-container {
+    background-color: pink;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn-danger {
+    background-color: orange;
+    border: 1px solid black;
+
+}
+
+.btn-danger:hover {
+    background-color: orangered;
+      
+}
+
+
+
+.fw-bold {
+    color: black;
+}

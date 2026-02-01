@@ -1,0 +1,59 @@
+﻿@page "/all-product-categories"
+@using jbH60Manager.Models
+@inject HttpClient httpClient
+
+<h3>DisplayAllProductsCategories</h3>
+
+@if (prodCat == null)
+{
+    <p>Loading products...</p>
+}
+else
+{
+    <SearchBar OnSearchRequested="SearchAction"></SearchBar>
+    @foreach (var item in prodCat)
+    {
+        @if (item != null)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">
+                              
+                                @item.ProdCat
+
+                            </h5>
+                         
+                        </div>
+               
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
+
+@code {
+    private List<ProductCategory> prodCat;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            prodCat = await httpClient.GetFromJsonAsync<List<ProductCategory>>("http://localhost:5076/api/ProductCategories");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching products: {ex.Message}");
+        }
+    }
+
+
+    private async Task SearchAction(string searchTerm)
+    {
+
+        prodCat = await httpClient.GetFromJsonAsync<List<ProductCategory>>($"http://localhost:5076/api/ProductCategories/ProductCategorySearch/{searchTerm}");
+     
+    }
+}

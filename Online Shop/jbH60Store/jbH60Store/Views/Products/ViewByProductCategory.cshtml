@@ -1,0 +1,142 @@
+﻿@model IEnumerable<jbH60Store.Models.Product>
+
+@{
+    ViewData["Title"] = "View by Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var displayedCategories = new List<string>();
+    var categoryCounts = ViewData["CategoryCounts"] as Dictionary<string, int>;
+
+    var displayedCategories1 = new List<string>();
+    var categoryCounts1 = ViewData["CategoryCounts"] as Dictionary<string, int>;
+}
+
+<div class="float-start mb-4">
+    <a class="p-2 btn-pink" asp-action="SortByProductCategory" asp-controller="Products">Back to previous page</a>
+</div>
+
+<div class="float-end mb-4">
+    <a class="p-2 btn-pink" asp-action="Create" asp-controller="Products">Add a new product</a>
+</div>
+
+<partial name="_SearchBarPartial" />
+
+<div class="container text-center">
+    @foreach (var item in Model)
+    {
+        var category = item.ProdCat.ProdCat;
+
+        if (!displayedCategories1.Contains(category))
+        {
+            displayedCategories1.Add(category);
+
+            var count = categoryCounts.ContainsKey(category) ? categoryCounts[category] : 0;
+
+            <div class="d-inline-block">
+                @if (category == "Fragrances")
+                {
+                    <img src="~/images/fragrance.png" alt="fragrance bottle" />
+                }
+                else if (category == "Hair Care")
+                {
+                    <img src="~/images/shampoo.png" alt="shampoo bottle" />
+                }
+                else if (category == "Skin Care")
+                {
+                    <img src="~/images/cream.png" alt="skin care bottle and cream" />
+                }
+                else if (category == "Tools and Brushes")
+                {
+                    <img src="~/images/beauty.png" alt="makeup tools"/>
+                }
+                else if (category == "Makeup")
+                {
+                    <img src="~/images/make-up.png" alt="makeup" />
+                }
+
+                <br />
+                <a class="m-2 HH_labels" asp-action="ViewByProductCategory" asp-controller="Products" asp-route-id="@item.ProdCat.CategoryId">
+                    @Html.DisplayFor(modelItem => item.ProdCat.ProdCat) Products (@count)
+                </a>
+            </div>
+
+            }
+
+    }
+</div>
+<hr />
+<div class="container text-center">
+    @foreach (var item in Model)
+    {
+        var category = item.ProdCat.ProdCat;
+
+        if (!displayedCategories.Contains(category))
+        {
+            displayedCategories.Add(category);
+
+            var count = categoryCounts.ContainsKey(category) ? categoryCounts[category] : 0;
+
+            <div class="d-inline-block">
+                @if (category == "Fragrances")
+                {
+                    <img src="~/images/fragrance.png" />
+                }
+                else if (category == "Hair Care")
+                {
+                    <img src="~/images/shampoo.png" />
+                }
+                else if (category == "Skin Care")
+                {
+                    <img src="~/images/cream.png" />
+                }
+                else if (category == "Tools and Brushes")
+                {
+                    <img src="~/images/beauty.png" />
+                }
+                else if (category == "Makeup")
+                {
+                    <img src="~/images/make-up.png" />
+                }
+
+                <br />
+                <a class="m-2 fw-bold" asp-action="ViewByProductCategory" asp-controller="Products" asp-route-id="@item.ProdCat.CategoryId">
+                    @Html.DisplayFor(modelItem => item.ProdCat.ProdCat) Products
+                </a>
+            </div>
+
+            <div class="row text-center">
+                @foreach (var product in Model.Where(p => p.ProdCat.ProdCat == category))
+                {
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body @((product.Stock == 0) ? "bg-low-stock" : "")">
+                                <h5 class="card-title">
+                                    @Html.DisplayFor(modelItem => product.Description)
+                                    @if (product.Stock == 0)
+                                    {
+                                        <span class="text-danger">*Out of Stock*</span>
+                                    }
+                                </h5>
+
+                                <p class="card-text">
+                                    <strong>Sell Price:</strong> CAD @Html.DisplayFor(modelItem => product.SellPrice)$<br>
+                                </p>
+                                <div>
+                                    <a asp-action="Edit" asp-controller="Products" asp-route-id="@product.ProductId" class="btn btn-sm btn-edit">
+                                        <img src="~/images/edit.png" /> Update
+                                    </a>
+                                    <a asp-action="Delete" asp-controller="Products" asp-route-id="@product.ProductId" class="btn btn-sm btn-danger">
+                                        <img src="~/images/delete-product.png" /> Delete
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a asp-action="Details" asp-controller="Products" asp-route-id="@product.ProductId" class="btn">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>

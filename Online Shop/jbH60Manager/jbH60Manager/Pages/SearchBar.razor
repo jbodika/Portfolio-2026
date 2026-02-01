@@ -1,0 +1,40 @@
+﻿<div class="criteria-menu text-center mb-3">
+    <button @onclick="@(() => SetSearchCriteria("BuyPrice"))" class="@(@GetButtonClass("BuyPrice"))">Search by Buy Price</button>
+    <button @onclick="@(() => SetSearchCriteria("Description"))" class="@(@GetButtonClass("Description"))">Search by Description</button>
+    <button @onclick="@(() => SetSearchCriteria("SellPrice"))" class="@(@GetButtonClass("SellPrice"))">Search by Sell Price</button>
+    <button @onclick="@(() => SetSearchCriteria("Stock"))" class="@(@GetButtonClass("Stock"))">Search by Stock</button>
+    <button @onclick="@(() => SetSearchCriteria("ProductCategory"))" class="@(@GetButtonClass("ProductCategory"))">Search by ProductCategory</button>
+
+</div>
+
+<div class="input-group mb-2">
+    <label for="searchTerm">Click on the option above and enter your search:</label>
+    <input type="text" @bind="searchTerm" id="searchTerm" />
+
+    <button @onclick="Search" class="btn btn-primary">Search</button>
+</div>
+
+@code {
+    private string searchTerm;
+    private string currentSearchCriteria;
+
+    [Parameter]
+    public EventCallback<string> OnSearchRequested { get; set; }
+
+    private async Task Search()
+    {
+        if (!string.IsNullOrEmpty(currentSearchCriteria))
+        {
+            await OnSearchRequested.InvokeAsync($"{currentSearchCriteria}:{searchTerm}");
+        }
+    }
+    private string GetButtonClass(string criteria)
+    {
+        return criteria == currentSearchCriteria ? "selected-criteria" : "";
+    }
+    private void SetSearchCriteria(string criteria)
+    {
+        currentSearchCriteria = criteria;
+    }
+}
+

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<jbH60Customer.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+<div class="container">
+   
+    <div class="pt-4 grid-container">
+        @foreach (var item in Model)
+        {
+            <div class="@(item.Stock == 0 ? "item-out-of-stock":"grid-item")">
+                <div class="item-image">
+                    @if (item.Image != null)
+                    {
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.Image)" alt="Image of @item.Description" />
+                    }
+                </div>
+                <div class="item-details">
+                    @if (item.Stock == 0)
+                    {
+                        <p>OUT OF STOCK</p>
+                    }
+
+                    <div class="item-title " id="@item.ProductId">@Html.DisplayFor(modelItem => item.Description)</div>
+                    <div class="item-manufacturer">@Html.DisplayFor(modelItem => item.Manufacturer)</div>
+                    <div class="item-sell-price">@Html.DisplayFor(modelItem => item.SellPrice)$</div>
+                    <div class="item-employee-notes">@Html.DisplayFor(modelItem => item.EmployeeNotes)</div>
+                    <div class="item-prod-cat">@Html.DisplayFor(modelItem => item.ProdCat.ProdCat)</div>
+                    <div class="item-quantity">
+
+                        <form asp-action="AddToCart" asp-controller="ShoppingCarts">
+                           
+                            <input hidden name="productId" value="@item.ProductId" />
+                            <input hidden name="price" value="@item.SellPrice" />
+
+                            <label for="spinner">Quantity:</label>
+                            <input type="number" id="spinner" name="quantity" value="1" min="1" max="100">
+                            <button class="btn-add-to-cart m-2" type="submit">Add to Cart</button>
+                        </form>
+
+                    </div>
+              
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+<partial name="_NewProductNotificationPartial" />
+<partial name="_ProductErrorNotificationPartial" />

@@ -1,0 +1,95 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = jbH60Manager
+build_property.RootNamespace = jbH60Manager
+build_property.ProjectDir = C:\Users\jolen\OneDrive - Cégep Heritage College\5th Semester\420-H60\Assignments\jbH60A03\jbH60Manager\jbH60Manager\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\jolen\OneDrive - Cégep Heritage College\5th Semester\420-H60\Assignments\jbH60A03\jbH60Manager\jbH60Manager
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/Customer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/CustomerOrders.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJPcmRlcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/DisplayAllProductCategories.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheUFsbFByb2R1Y3RDYXRlZ29yaWVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/DisplayAllProducts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheUFsbFByb2R1Y3RzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/ReportFulfilledOrders.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0RnVsZmlsbGVkT3JkZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/ReportOrdersForCustomer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0T3JkZXJzRm9yQ3VzdG9tZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/SearchBar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoQmFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/UpdatePrices.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlUHJpY2VzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Pages/UpdateStock.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlU3RvY2sucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-hjdo1abpzo
+
+[C:/Users/jolen/OneDrive - Cégep Heritage College/5th Semester/420-H60/Assignments/jbH60A03/jbH60Manager/jbH60Manager/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-sp4s8znvxj

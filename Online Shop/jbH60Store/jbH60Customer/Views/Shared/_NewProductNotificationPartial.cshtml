@@ -1,0 +1,19 @@
+﻿@if (TempData["NewProduct"] != null && (bool)TempData["NewProduct"])
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+    <script>
+
+        toastr.options = {
+            "positionClass": 'toast-top-right'
+        };
+
+        console.log(toastr.options);
+
+        toastr.error('@TempData["ProductName"] @TempData["ProductAmount"] has been added to your Cart!', 'Bzzz 🐝');
+
+
+    </script>
+}

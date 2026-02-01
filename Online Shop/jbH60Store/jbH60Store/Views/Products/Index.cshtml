@@ -1,0 +1,102 @@
+﻿@model IEnumerable<jbH60Store.Models.Product>
+
+@{
+    ViewData["Title"] = "All Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var displayedCategories = new List<string>();
+}
+<div class="float-start">
+    <a class="btn-pink p-2" asp-action="AllProductInformation" asp-controller="Products">Back to previous page </a>
+</div>
+<div class="float-end">
+    <a class="btn-pink p-2" asp-action="Create" asp-controller="Products">Add a new product</a>
+</div>
+<div class="container text-center">
+    <partial name="_SearchBarPartial" />
+
+    @foreach (var item in Model)
+    {
+        var category = item.ProdCat.ProdCat;
+
+        if (!displayedCategories.Contains(category))
+        {
+            displayedCategories.Add(category);
+
+            <div class="d-inline-block">
+                @if (category == "Fragrances")
+                {
+                    <img src="~/images/fragrance.png" alt="fragrance bottle"/>
+                    <br />
+                    <a class="m-2 fw-bold" asp-action="ViewByProductCategory" asp-controller="Products" asp-route-id="@item.ProdCat.CategoryId"> @Html.DisplayFor(modelItem => item.ProdCat.ProdCat) Products</a>
+                }
+                else if (category == "Hair Care")
+                {
+                    <img src="~/images/shampoo.png" alt="shampoo bottle"/>
+                    <br />
+                    <a class="m-2 fw-bold" asp-action="ViewByProductCategory" asp-controller="Products" asp-route-id="@item.ProdCat.CategoryId">(@item.ProdCat.ProdCat.Count()) @Html.DisplayFor(modelItem => item.ProdCat.ProdCat) Products</a>
+                }
+                else if (category == "Skin Care")
+                {
+                    <img src="~/images/cream.png" alt="skin care bottle" />
+                    <br />
+                    <a class="m-2 fw-bold" asp-action="ViewByProductCategory" asp-controller="Products" asp-route-id="@item.ProdCat.CategoryId"> @Html.DisplayFor(modelItem => item.ProdCat.ProdCat) Products</a>
+                }
+                else if (category == "Tools and Brushes")
+                {
+                    <img src="~/images/beauty.png" alt="makeup tools"/>
+                    <br />
+                    <a class="m-2 fw-bold" asp-action="ViewByProductCategory" asp-controller="Products" asp-route-id="@item.ProdCat.CategoryId"> @Html.DisplayFor(modelItem => item.ProdCat.ProdCat) Products</a>
+                }
+                else if (category == "Makeup")
+                {
+                    <img src="~/images/make-up.png" alt="makeup" />
+                    <br />
+                    <a class="m-2 fw-bold" asp-action="ViewByProductCategory" asp-controller="Products" asp-route-id="@item.ProdCat.CategoryId"> @Html.DisplayFor(modelItem => item.ProdCat.ProdCat) Products</a>
+                }
+            </div>
+        }
+    }
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body @((item.Stock == 0) ? "bg-low-stock" : "")">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">
+                                
+                                @Html.DisplayFor(modelItem => item.Description)
+                         
+                            </h5>
+                            <div>
+                             
+                                <a asp-action="Delete" asp-controller="Products" asp-route-id="@item.ProductId" class="btn btn-sm btn-danger">
+                                    <img src="~/images/delete-product.png" /> Delete
+                                </a>
+                                <a asp-action="Edit" asp-controller="Products" asp-route-id="@item.ProductId" class="btn btn-sm btn-edit">
+                                    <img src="~/images/edit.png" /> Update
+                                </a>   
+                            </div>
+                        </div>
+                        <p class="card-text">
+                            @if (item.Stock == 0)
+                            {
+                            <p>Please restock</p>
+                            }
+                        <strong>Manufacturer:</strong> @Html.DisplayFor(modelItem => item.Manufacturer)<br>
+                        <strong>Stock:</strong> @Html.DisplayFor(modelItem => item.Stock)<br>
+                        <strong>Buy Price:</strong> CAD @Html.DisplayFor(modelItem => item.BuyPrice)$<br>
+                        <strong>Sell Price:</strong> CAD @Html.DisplayFor(modelItem => item.SellPrice)$<br>
+                        <strong>Category:</strong> @Html.DisplayFor(modelItem => item.ProdCat.ProdCat)<br>
+                        <strong>Employee Notes:</strong> @Html.DisplayFor(modelItem => item.EmployeeNotes)
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    </div>

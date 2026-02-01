@@ -1,0 +1,21 @@
+﻿@model IEnumerable<jbH60Customer.Models.ProductCategory>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+
+    <h2 class="pb-4 fw-bold">Product Categories (@ViewData["CategoryCounts"])</h2>
+<partial name="_SearchBarPartial" />
+
+<div class="circle-container">
+    @foreach (var item in Model)
+    {
+        <div class="circle">
+            <span class="circle-text">@Html.DisplayFor(modelItem => item.ProdCat)</span>
+                <a asp-action="ViewByProdCat" asp-controller="Products" asp-route-id="@item.CategoryId">View all</a>
+        </div>
+    }
+    </div>
+</div>

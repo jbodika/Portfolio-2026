@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Honeydew Heaven</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/jbH60Customer.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon-32x32.png">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/newLogo.png">
+
+</head>
+<body>
+    <a asp-action="Index" asp-controller="Home"> <h1 class="display-3 m-2 text-center"><span id="HH_first_word">Honeydew</span> <span id="HH_second_word">Heaven</span></h1></a>
+@*    <a asp-action="Index" asp-controller="Home"> <h1 class="display-4 m-2 text-center"><span id="HH_first_word">Honeydew</span> <span id="HH_second_word">Heaven</span></h1></a>
+    <img id="welcome" src="~/images/pikist.jpg" />*@
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-4 mt-4">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-action="Index" asp-controller="Products">All Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-action="Index" asp-controller="ProductCategories">All Product Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-action="ViewByProdCat" asp-controller="Products" asp-route-id="1"></a>
+                        </li>
+                     
+                    </ul>
+                    <ul class="navbar-nav">
+                  
+
+                        <li class="nav-item">
+                            <div class="notification">
+                            <a class="nav-link text-dark" asp-action="Index" asp-controller="ShoppingCarts"><img width="50" height="50" src="~/images/cart.png" /><span class="notification-badge">@ViewBag.CartTotal</span></a>
+                       </div>   @*  
+                                <span class="notification-badge">@ViewBag.CartTotal</span>
+                            </div>*@
+                            </li>
+                        <partial name="_LoginPartial" />
+                      
+                    </ul>
+                  
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   @* <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - jbH60Customer - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

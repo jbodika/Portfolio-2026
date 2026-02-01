@@ -1,0 +1,42 @@
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.deps.json
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.runtimeconfig.json
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.dll
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.pdb
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.csproj.AssemblyReference.cache
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.AssemblyInfoInputs.cache
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.AssemblyInfo.cs
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.csproj.CoreCompileInputs.cache
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.dll
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\refint\StoreLibrary.dll
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.pdb
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.genruntimeconfig.cache
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A02\jbH60Store\StoreLibrary\obj\Debug\net6.0\ref\StoreLibrary.dll
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.deps.json
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.runtimeconfig.json
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.dll
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.pdb
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.csproj.AssemblyReference.cache
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.AssemblyInfoInputs.cache
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.AssemblyInfo.cs
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.csproj.CoreCompileInputs.cache
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.dll
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\refint\StoreLibrary.dll
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.pdb
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.genruntimeconfig.cache
+C:\Users\jolen\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03 -school\jbH60Store\StoreLibrary\obj\Debug\net6.0\ref\StoreLibrary.dll
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.deps.json
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.runtimeconfig.json
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.dll
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\bin\Debug\net6.0\StoreLibrary.pdb
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.csproj.AssemblyReference.cache
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.AssemblyInfoInputs.cache
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.AssemblyInfo.cs
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.dll
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\refint\StoreLibrary.dll
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.pdb
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\StoreLibrary.genruntimeconfig.cache
+C:\Users\Jolene\OneDrive - Cégep Heritage College\420-H60\Assignments\jbH60A03\jbH60Store\StoreLibrary\obj\Debug\net6.0\ref\StoreLibrary.dll

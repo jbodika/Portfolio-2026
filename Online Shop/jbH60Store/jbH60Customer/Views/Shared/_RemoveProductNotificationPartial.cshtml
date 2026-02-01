@@ -1,0 +1,19 @@
+﻿@if (TempData["RemovedProduct"] != null && (bool)TempData["RemovedProduct"])
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+    <script>
+
+        toastr.options = {
+            "positionClass": 'toast-top-right-remove'
+        };
+
+        console.log(toastr.options);
+
+        toastr.error('@TempData["ProductName"] @TempData["ProductAmount"] was removed from your cart', 'Bzzz 🐝');
+
+
+    </script>
+}

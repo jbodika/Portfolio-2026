@@ -1,0 +1,85 @@
+﻿@page "/orders"
+@inject HttpClient httpClient
+@using jbH60Manager.Models;
+<h3>Orders</h3>
+
+<div>
+    <label for="selectedDate">Select Date:</label>
+    <input type="date" id="selectedDate" @bind="selectedDate" />
+    <button @onclick="SearchOrders">Load Orders</button>
+</div
+@if (orders == null)
+{
+    <p>Loading orders...</p>
+}
+else if (orders.Count == 0)
+{
+    <p>No orders found</p>
+}
+else
+{
+    <h4 class="mt-2">@orders.Count Order(s)</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Date Created</th>
+                <th>Date Fulfilled</th>
+                <th>Total</th>
+                <th>View all orders by</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in orders)
+            {
+                
+
+                <tr>
+                    <td>@order.OrderId</td>
+                    <td>@order.DateCreated.ToShortDateString()</td>
+                    <td>@order.DateFufilled.ToShortDateString()</td>
+                    <td>@order.Total$</td>
+                    <td> <a href="/customer/@order.CustomerId/orders" class="text-black fw-bold">Customer @order.CustomerId's order</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Order> orders;
+    private DateTime selectedDate = DateTime.Now;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Fetch orders for the selected date
+            orders = await httpClient.GetFromJsonAsync<List<Order>>($"http://localhost:5076/api/Orders");
+       
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching orders: {ex.Message}");
+        }
+    }
+
+     private async Task SearchOrders()
+    {
+        try
+        {
+            // Fetch orders for the selected date
+            orders = await httpClient.GetFromJsonAsync<List<Order>>($"http://localhost:5076/api/Orders/ByDate/{selectedDate:yyyy-MM-dd}");
+       
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching orders: {ex.Message}");
+        }
+    }
+}

@@ -1,0 +1,52 @@
+﻿@model jbH60Store.Models.Product
+
+@{
+    ViewData["Title"] = "Update Prices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <a class="btn-pink p-2" asp-action="Edit" asp-controller="Products" asp-route-id="@Model.ProductId">Back to Product</a>
+</div>
+<div class="row edit-form-container">
+    <h1>Edit</h1>
+    <h4> Product</h4>
+    <hr />
+    <div class="col-md-8">
+        <div>
+            <h5>@Model.Description - @Model.Manufacturer</h5>
+          
+            
+        </div>
+        <div class="form-group">
+            <form asp-controller="Products"  asp-action="UpdatePrices">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ProductId" />
+
+                <label asp-for="BuyPrice" class="control-label form-label"></label>
+                <input asp-for="BuyPrice" class="form-control" readonly />
+             
+                <label asp-for="SellPrice" class="control-label form-label"></label>
+                <input asp-for="SellPrice" class="form-control" readonly />
+             
+                <label for="NewBuyPrice" class="control-label form-label">New buy price:</label>
+                <input type="number" id="NewBuyPrice" name="NewBuyPrice" class="form-control" value="@Model.BuyPrice" />
+                <span asp-validation-for="BuyPrice" class="text-danger"></span>
+                <label for="NewSellPrice" class="control-label form-label">New sell price:</label>
+                <input type="number" id="NewSellPrice" name="NewSellPrice" class="form-control" value="@Model.SellPrice" />
+                <span asp-validation-for="SellPrice" class="text-danger"></span>
+                
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
